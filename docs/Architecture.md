@@ -89,30 +89,34 @@ Não haverá backend separado no MVP.
 ## Banco de Dados
 
 ```text
-Supabase PostgreSQL
+Nenhum banco de dados no MVP
 ```
+
+O MVP não terá:
+
+* login;
+* cadastro;
+* histórico;
+* persistência de histórias;
+* persistência de StoryBible.
 
 Motivos:
 
-* baixo custo;
-* rapidez de implementação;
-* autenticação integrada;
-* storage integrado.
+* reduzir escopo;
+* validar a experiência principal;
+* evitar infraestrutura prematura.
 
 ---
 
 ## Storage
 
 ```text
-Supabase Storage
+Sem storage persistente no MVP
 ```
 
-Armazenará:
+O MVP não persiste assets gerados.
 
-* imagens geradas;
-* áudios de narração;
-* trilhas sonoras;
-* assets estáticos.
+As trilhas sonoras do MVP são arquivos MP3 fixos disponibilizados no projeto.
 
 ---
 
@@ -172,7 +176,9 @@ Biblioteca Local
 
 O MVP não utiliza IA para geração musical.
 
-As trilhas são arquivos estáticos previamente disponibilizados no sistema.
+As trilhas são 3 arquivos MP3 fixos.
+
+A seleção da música de fundo será aleatória.
 
 ---
 
@@ -187,9 +193,9 @@ Next.js Frontend
         ▼
 Next.js Backend
         │
- ┌──────┼──────────┐
- ▼      ▼          ▼
-Supabase OpenAI  Storage
+ ┌──────┴──────────────┐
+ ▼                     ▼
+OpenAI        Biblioteca Local
 ```
 
 ---
@@ -233,6 +239,8 @@ status = processing
 ## Passo 4
 
 Gerar Temporary Story Bible.
+
+No MVP, a Temporary Story Bible existe apenas em runtime durante a geração.
 
 Exemplo:
 
@@ -279,7 +287,7 @@ Os prompts visuais devem orientar a geração para imagens verticais em proporç
 Gerar imagens.
 
 ```text
-5 imagens
+4 a 5 imagens
 ```
 
 Todas as imagens da história devem seguir a proporção 9:16.
@@ -314,7 +322,7 @@ Seleção aleatória.
 
 ## Passo 10
 
-Salvar resultado.
+Concluir resultado em memória para consumo imediato.
 
 ```text
 status = completed
@@ -384,10 +392,14 @@ Narração
 A história também possui:
 
 ```text
-Soundtrack
+Música de fundo
 ```
 
 executada durante toda a experiência.
+
+A interface do MVP deve ser simples, mas lúdica, convidativa e adequada para a hora de dormir.
+
+Ela deve priorizar clareza, acolhimento e baixo atrito, sem parecer uma ferramenta técnica.
 
 ---
 
@@ -490,7 +502,7 @@ soundtrack-03.mp3
 ## Seleção
 
 ```text
-Random Selection
+Seleção aleatória
 ```
 
 ---
@@ -553,6 +565,10 @@ Não haverá necessidade inicial de publicação em lojas.
 ---
 
 # Modelo de Persistência
+
+Não existe modelo de persistência no MVP.
+
+Os modelos abaixo ficam reservados para uma versão futura.
 
 ## ChildProfile
 
@@ -649,8 +665,11 @@ A unidade principal do domínio é a Scene.
 A experiência é composta por:
 
 * narrativa;
-* imagem 9:16;
+* 4 a 5 imagens 9:16;
 * narração;
-* trilha sonora.
+* texto;
+* música de fundo.
 
 O produto é construído para criar experiências completas para a hora de dormir, consumidas em modo imersivo e prioritariamente em dispositivos móveis.
+
+No MVP, não há banco de dados, login, cadastro, histórico ou persistência de StoryBible.

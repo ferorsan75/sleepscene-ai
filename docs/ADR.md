@@ -102,6 +102,10 @@ Cada StorySession possui uma Temporary Story Bible contendo:
 * estilo narrativo;
 * contexto da aventura.
 
+No MVP, a Temporary Story Bible é criada em runtime apenas durante a geração.
+
+Ela não é persistida, reutilizada ou mantida em histórico.
+
 ---
 
 # ADR-005
@@ -259,6 +263,8 @@ O Player opera em tela cheia.
 
 A imagem é o elemento principal da experiência.
 
+A interface do MVP deve ser simples, lúdica, convidativa e adequada para a hora de dormir.
+
 ---
 
 # ADR-012
@@ -313,6 +319,8 @@ Seleção:
 Aleatória
 ```
 
+A seleção será feita entre 3 arquivos MP3 fixos.
+
 ---
 
 # ADR-014
@@ -361,14 +369,16 @@ Backend:
 Next.js Server Actions
 
 Database:
-Supabase PostgreSQL
+Nenhum banco de dados no MVP
 
 Storage:
-Supabase Storage
+Sem storage persistente no MVP
 
 AI:
 OpenAI
 ```
+
+O MVP não possui login, cadastro, histórico ou persistência de StoryBible.
 
 ---
 
@@ -528,16 +538,19 @@ Máximo 3 histórias por sessão
 Criança sempre protagonista
 
 Temporary Story Bible
+Temporary Story Bible somente em runtime no MVP
 
 Player imersivo
+Interface simples, lúdica e adequada para hora de dormir
 
 Mobile First
 
 PWA Ready
 
-Imagens 9:16
+4 a 5 imagens 9:16 no MVP
 
 3 trilhas sonoras fixas
+Música de fundo escolhida aleatoriamente
 
 Geração assíncrona
 
@@ -548,4 +561,10 @@ Story Generator gera cenas completas
 Sem Scene Generator no MVP
 
 AI First Development
+
+Sem banco de dados no MVP
+Sem login no MVP
+Sem cadastro no MVP
+Sem histórico no MVP
+Sem persistência de StoryBible no MVP
 ```
