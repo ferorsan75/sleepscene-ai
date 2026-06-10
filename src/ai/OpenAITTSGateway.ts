@@ -1,7 +1,7 @@
 import { openai } from "@/lib/openai/client";
 
 const NARRATION_INSTRUCTIONS =
-  "Narrate as a bedtime story with a calm pace, a warm tone, gentle language, and natural pauses.";
+  "Narre em português brasileiro, com pronúncia natural do Brasil, como um contador de histórias falando para uma criança na hora de dormir. Use um ritmo calmo e um pouco mais lento, com tom acolhedor, carinhoso e tranquilizador. Faça pausas naturais entre frases e momentos importantes. Evite um tom energético, acelerado ou comercial. Mantenha a voz suave e relaxante, adequada para induzir o sono.";
 
 export async function generateNarrationFromText(
   text: string,
