@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { generateImages } from "@/ai/ImageGenerator";
 import { generateImagePrompts } from "@/ai/ImagePromptGenerator";
 import { generateStoryBible } from "@/ai/StoryBibleGenerator";
 import { generateStory } from "@/ai/StoryGenerator";
@@ -12,11 +13,13 @@ export async function POST(request: Request) {
       story,
       visualStyle: storyBible.visualStyle,
     });
+    const images = await generateImages(imagePrompts);
 
     return NextResponse.json({
       storyBible,
       story,
       imagePrompts,
+      images,
     });
   } catch (error) {
     return NextResponse.json(

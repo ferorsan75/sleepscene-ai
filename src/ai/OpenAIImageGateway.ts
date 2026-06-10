@@ -16,6 +16,6 @@ export async function generateImageFromPrompt(
     prompt,
     n: 1,
     output_format: "png",
-    size: "1024x1792",
+    size: "1024x1536",
   });
 }
